@@ -13,7 +13,6 @@ else:
 
 
 class LabUnc:
-
     """Representation of a floating point lab value with an uncertainty."""
 
     @staticmethod
@@ -104,7 +103,6 @@ class LabUnc:
 
 
 class StdUnc(LabUnc):
-
     """Representation of a floating point standard value with an uncertainty."""
 
     @staticmethod
