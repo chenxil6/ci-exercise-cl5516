@@ -4,7 +4,7 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ci-exercise-<YOUR_NETID>"
+name = "ci-exercise-chenxiliu6"
 version = "0.1.0"
 description = "APC524 CI exercise"
 readme = "README.md"
