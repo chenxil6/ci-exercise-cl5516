@@ -6,8 +6,8 @@ repos:
       - id: end-of-file-fixer
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.0
+    rev: v0.6.9
     hooks:
-      - id: ruff
-        args: ["--extend-select=B,I,RUF,UP"]
       - id: ruff-format
+      - id: ruff
+        args: ["--fix", "--show-fixes"]

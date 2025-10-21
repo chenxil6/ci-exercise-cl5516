@@ -1,11 +1,11 @@
 """Defines tests for the StdUnc class."""
 
-import itertools
+import itertools  # stdlib
 
-import pytest
+import pytest  # third-party
 from uncertainties import ufloat
 
-from unc import StdUnc
+from unc import StdUnc  # local
 
 CASES = ((10, 1), (10, 2), (20, 0.1), (10, 0.1), (0.1234, 0.02))
 pairs = pytest.mark.parametrize("a,b", list(itertools.permutations(CASES, 2)))

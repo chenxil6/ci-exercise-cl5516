@@ -1,16 +1,36 @@
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "unc"
+name = "ci-exercise-<YOUR_NETID>"
 version = "0.1.0"
+description = "APC524 CI exercise"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    'typing_extensions; python_version<"3.11"',
+  'typing_extensions; python_version < "3.11"'
 ]
 
-[dependency-groups]
-test = ["pytest", "uncertainties"]
-docs = ["sphinx", "furo", "myst_parser", "sphinx-markdown-builder"]
+# (Mirror the groups below as extras so pip/nox can install them easily)
+[project.optional-dependencies]
+tests = [
+  "pytest>=7.4",
+  "uncertainties>=3.2"
+]
+docs = [
+  "sphinx>=7",
+  "furo>=2024.8.6",
+  "myst_parser>=3.0.0",
+  "sphinx-markdown-builder>=0.6.6"
+]
+
+# Ruff config (lint+isort+pyupgrade+bugbear)
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-select = ["B", "I", "RUF", "UP"]  # default E,F already enabled
+
+[tool.ruff.lint.isort]
+known-first-party = ["unc"]
